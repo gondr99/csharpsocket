@@ -10,21 +10,20 @@ namespace Client;
 
 internal class APMClient
 {
-    static void Main(string[] args)
-    {
-        Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("121.190.134.63"), 20000);
+    //static void Main(string[] args)
+    //{
+    //    Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+    //    IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("121.190.134.63"), 20000);
 
-        socket.BeginConnect(endPoint, ConnectCompleted, socket);
+    //    socket.BeginConnect(endPoint, ConnectCompleted, socket);
 
-        while(true)
-        {
-            string str = Console.ReadLine();
-            socket.Send(Encoding.UTF8.GetBytes(str));
-        }
+    //    while(true)
+    //    {
+    //        string str = Console.ReadLine();
+    //        socket.Send(Encoding.UTF8.GetBytes(str));
+    //    }
 
-
-    }
+    //}
 
     private static void ConnectCompleted(IAsyncResult ar)
     {

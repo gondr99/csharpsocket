@@ -10,20 +10,20 @@ namespace Server;
 
 internal class APMServer
 {
-    static void Main(string[] args)
-    {
-        Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-        IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("121.190.134.63"), 20000);
-        serverSocket.Bind(endPoint);
-        serverSocket.Listen(1000);
+    //static void Main(string[] args)
+    //{
+    //    Socket serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+    //    IPEndPoint endPoint = new IPEndPoint(IPAddress.Parse("121.190.134.63"), 20000);
+    //    serverSocket.Bind(endPoint);
+    //    serverSocket.Listen(1000);
 
-        serverSocket.BeginAccept(AcceptCompleted, serverSocket);
+    //    serverSocket.BeginAccept(AcceptCompleted, serverSocket);
 
-        while(true)
-        {
-            Thread.Sleep(1000);
-        }
-    }
+    //    while(true)
+    //    {
+    //        Thread.Sleep(1000);
+    //    }
+    //}
 
     //비동기 작업에 대한 정보를 가지고 있다.
     private static void AcceptCompleted(IAsyncResult ar)
